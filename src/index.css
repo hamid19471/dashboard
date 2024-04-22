@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Shabnam";
+  src: url("./assets/font/Shabnam.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Shabnam";
+  src: url("./assets/font/Shabnam-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Shabnam";
+  src: url("./assets/font/Shabnam-Light.ttf");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Shabnam";
+  src: url("./assets/font/Shabnam-Medium.ttf");
+  font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Shabnam";
+  src: url("./assets/font/Shabnam-Thin.ttf");
+  font-weight: thin;
+  font-style: normal;
+}
+
 body {
-  @apply bg-gray-900 text-white;
+  @apply bg-gray-900 text-white font-sans;
 }
