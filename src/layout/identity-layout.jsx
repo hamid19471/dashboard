@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import logo from "/images/logo.png";
 const IdentityLayout = () => {
   return (
     <div className="flex flex-col items-center justify-between h-screen w-full m-auto">
@@ -7,16 +6,7 @@ const IdentityLayout = () => {
         header
       </header>
       <div className="flex gap-4 flex-col items-center justify-center">
-        <div className="text-center m-auto">
-          <img src={logo} alt="hamid asadi" width={180} height={43} />
-          <h2 className="font-extrabold text-slate-200 text-4xl leading-10 mt-4">
-            خوش آمدید
-          </h2>
-          <p className="font-light text-sm text-slate-400">
-            جهت استفاده از خدمات وارد شوید
-          </p>
-        </div>
-        <main className="bg-slate-800 p-12 rounded-lg w-[500px]">
+        <main className="">
           <Outlet />
         </main>
       </div>
