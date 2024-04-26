@@ -1,0 +1,49 @@
+{
+  "register": {
+    "title": "Welcome",
+    "subtitle": "Register to use our servives",
+    "notice": "Registred before?",
+    "loginlink": "login",
+    "button": "register",
+    "proccess": "Please Wait...",
+    "formlabel": {
+      "mobile": "Mobile",
+      "password": "Password",
+      "confirmPassword": "Confirm Password"
+    },
+    "formplaceholders": {
+      "mobile": "Enter Mobile Number",
+      "password": "Enter Password",
+      "confirmPassword": "Enter Passsword Again"
+    },
+    "formvalidation": {
+      "mobile": "Please Enter Valid Mobile Number",
+      "password": "Please Enter Password",
+      "confirmPassword": "Please Enter Password Again",
+      "confirPasswordNotMatch": "Password Not Match"
+    }
+  },
+  "footer": {
+    "title": "Allright Reserved © | 2024"
+  },
+  "login": {
+    "title": "Welcome",
+    "subtitle": "Login to use our servives",
+    "notice": "Not Registred?",
+    "registerlink": "register",
+    "button": "login",
+    "proccess": "Please Wait...",
+    "formlabel": {
+      "mobile": "Mobile",
+      "password": "Password"
+    },
+    "formplaceholders": {
+      "mobile": "Enter Mobile Number",
+      "password": "Enter Password"
+    },
+    "formvalidation": {
+      "mobile": "Please Enter Valid Mobile Number",
+      "password": "Please Enter Password"
+    }
+  }
+}

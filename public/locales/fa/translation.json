@@ -1,0 +1,49 @@
+{
+  "register": {
+    "button": "ثبت نام",
+    "title": "خوش آمدید",
+    "subtitle": "جهت استفاده از خدمات ثبت نام کنید",
+    "notice": "قبلا ثبت نام کرده‌اید?",
+    "loginlink": "وارد شوید",
+    "proccess": "در حال انجام عملیات ...",
+    "formlabel": {
+      "mobile": "شماره تماس",
+      "password": "رمز عبور",
+      "confirmPassword": "تکرار رمز عبور"
+    },
+    "formplaceholders": {
+      "mobile": "شماره تماس خود را وارد کنید",
+      "password": "رمز عبور خود را وارد کنید",
+      "confirmPassword": "رمز عبور را مجدد وارد کنید"
+    },
+    "formvalidation": {
+      "mobile": "لطفا شماره تماس خود را وارد کنید",
+      "password": "لطفا رمز عبور خود را وارد کنید",
+      "confirmPassword": "لطفا رمز عبور خود را وارد کنید",
+      "confirPasswordNotMatch": "رمز عبور با تکرار آن یکسان نیست"
+    }
+  },
+  "footer": {
+    "title": "تمامی حقوق مادی و معنوی محفوظ است | © ۱۴۰۳"
+  },
+  "login": {
+    "title": "خوش آمدید",
+    "subtitle": "جهت استفاده از خدمات وارد شوید",
+    "notice": "جهت ثبت نام کلیک کنید",
+    "registerlink": "ثبت نام",
+    "button": "ورود",
+    "proccess": "در حال انجام عملیات ...",
+    "formlabel": {
+      "mobile": "شماره تماس",
+      "password": "رمز عبور"
+    },
+    "formplaceholders": {
+      "mobile": "شماره تماس خود را وارد کنید",
+      "password": "رمز عبور خود را وارد کنید"
+    },
+    "formvalidation": {
+      "mobile": "شماره تماس معتبر نمی‌باشد",
+      "password": "رمز وارد شده نامعتبر می‌باشد"
+    }
+  }
+}
