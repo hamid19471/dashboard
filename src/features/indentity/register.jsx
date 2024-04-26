@@ -8,8 +8,10 @@ import {
   useSubmit,
 } from "react-router-dom";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const Register = () => {
+  const { t } = useTranslation();
   const navigation = useNavigation();
   const isSubmitting = navigation.state !== "idle";
   const formSubmit = useSubmit();
@@ -40,7 +42,7 @@ const Register = () => {
     mobile: {
       required: {
         value: true,
-        message: "لطفا شماره تماس خود را وارد کنید",
+        message: `${t("register.formvalidation.mobile")}`,
       },
       minLength: 11,
       maxLength: 11,
@@ -48,17 +50,18 @@ const Register = () => {
     password: {
       required: {
         value: true,
-        message: "لطفا رمز عبور خود را وارد کنید",
+        message: `${t("register.formvalidation.password")}`,
       },
     },
     confirmPassword: {
       required: {
         value: true,
-        message: "لطفا رمز عبور خود را وارد کنید",
+        message: `${t("register.formvalidation.confirmPassword")}`,
       },
       validate: {
         value: (value) =>
-          value === watch("password") || "رمز عبور با تکرار آن یکسان نیست",
+          value === watch("password") ||
+          t("register.formvalidation.confirPasswordNotMatch"),
       },
     },
   };
@@ -73,15 +76,15 @@ const Register = () => {
         <div className="text-center justify-center items-center flex flex-col">
           <img src={logo} alt="hamid asadi" width={180} height={43} />
           <h2 className="font-extrabold text-slate-200 text-4xl leading-10 mt-4">
-            خوش آمدید
+            {t("register.title")}
           </h2>
           <p className="font-light text-sm text-slate-400">
-            جهت استفاده از خدمات ثبت نام کنید
+            {t("register.subtitle")}
           </p>
           <p className="font-bold text-white">
-            قبلا ثبت نام کرده‌اید |
+            {t("register.notice")} |
             <Link className="font-bold text-blue-500" to="/login">
-              وارد شوید
+              {t("register.loginlink")}
             </Link>
           </p>
         </div>
@@ -93,7 +96,9 @@ const Register = () => {
                   errors.mobile && "text-red-500 text-sm"
                 }`}
               >
-                {errors.mobile ? errors.mobile.message : "شماره تماس"}
+                {errors.mobile
+                  ? errors.mobile.message
+                  : t("register.formlabel.mobile")}
               </label>
               <input
                 className={`py-3 px-2 rounded-xl mb-3 focus:ring-2 focus:ring-blue-700 focus:outline-none text-black  ${
@@ -101,7 +106,7 @@ const Register = () => {
                 }`}
                 {...register("mobile", formControler.mobile)}
                 type="text"
-                placeholder="شماره تماس خود را وارد کنید"
+                placeholder={t("register.formplaceholders.mobile")}
               />
             </div>
             <div className="flex flex-col gap-2 my-4">
@@ -110,7 +115,9 @@ const Register = () => {
                   errors.password && "text-red-500 text-sm"
                 }`}
               >
-                {errors.password ? errors.password.message : "رمز عبور"}
+                {errors.password
+                  ? errors.password.message
+                  : t("register.formlabel.password")}
               </label>
               <input
                 className={`py-3 px-2 rounded-xl mb-3 focus:ring-2 focus:ring-blue-700 focus:outline-none text-black  ${
@@ -118,7 +125,7 @@ const Register = () => {
                 }`}
                 {...register("password", formControler.password)}
                 type="password"
-                placeholder="رمز عبور خود را وارد کنید"
+                placeholder={t("register.formplaceholders.password")}
               />
             </div>
             <div className="flex flex-col gap-2 my-4">
@@ -129,7 +136,7 @@ const Register = () => {
               >
                 {errors.confirmPassword
                   ? errors.confirmPassword.message
-                  : "تایید رمز عبور"}
+                  : t("register.formlabel.confirmPassword")}
               </label>
               <input
                 className={`py-3 px-2 rounded-xl mb-3 focus:ring-2 focus:ring-blue-700 focus:outline-none text-black  ${
@@ -137,7 +144,7 @@ const Register = () => {
                 }`}
                 {...register("confirmPassword", formControler.confirmPassword)}
                 type="password"
-                placeholder="رمز عبور را مجدد وارد کنید"
+                placeholder={t("register.formplaceholders.confirmPassword")}
               />
             </div>
             <button
@@ -146,7 +153,7 @@ const Register = () => {
                 !isValid && "bg-blue-800 text-slate-500 pointer-events-none"
               }`}
             >
-              {isSubmitting ? "در حال ثبت نام ..." : "ثبت نام"}
+              {isSubmitting ? t("register.proccess") : t("register.button")}
             </button>
           </form>
         </div>

@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
 import logo from "/images/logo.png";
 import { Link, useNavigation, useSubmit } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
+  const { t } = useTranslation();
   const navigation = useNavigation();
   const isSubmitting = navigation.state !== "idle";
   const formSubmit = useSubmit();
@@ -21,7 +23,7 @@ const Login = () => {
     mobile: {
       required: {
         value: true,
-        message: "لطفا شماره تماس خود را وارد کنید",
+        message: `${t("login.formvalidation.mobile")}`,
       },
       minLingth: 11,
       maxLength: 11,
@@ -29,7 +31,7 @@ const Login = () => {
     password: {
       required: {
         value: true,
-        message: "لطفا رمز عبور خود را وارد کنید",
+        message: `${t("login.formvalidation.password")}`,
       },
     },
   };
@@ -41,15 +43,15 @@ const Login = () => {
       <div className="text-center justify-center items-center flex flex-col">
         <img src={logo} alt="hamid asadi" width={180} height={43} />
         <h2 className="font-extrabold text-slate-200 text-4xl leading-10 mt-4">
-          خوش آمدید
+          {t("login.title")}
         </h2>
         <p className="font-light text-sm text-slate-400">
-          جهت استفاده از خدمات وارد شوید
+          {t("login.subtitle")}
         </p>
         <p className="font-bold text-white ">
-          جهت ثبت نام کلیک کنید | ‌
+          {t("login.notice")}
           <Link className="font-bold text-blue-500" to="/register">
-            ثبت نام
+            {t("login.registerlink")}
           </Link>
         </p>
       </div>
@@ -61,7 +63,9 @@ const Login = () => {
                 errors.mobile && "text-red-500 text-sm"
               }`}
             >
-              {errors.mobile ? errors.mobile.message : "شماره تماس"}
+              {errors.mobile
+                ? errors.mobile.message
+                : t("login.formlabel.mobile")}
             </label>
             <input
               className={`py-3 px-2 rounded-xl mb-3 focus:ring-2 focus:ring-blue-700 focus:outline-none text-black  ${
@@ -69,7 +73,7 @@ const Login = () => {
               }`}
               {...register("mobile", formControler.mobile)}
               type="text"
-              placeholder="شماره تماس خود را وارد کنید"
+              placeholder={t("login.formplaceholders.mobile")}
             />
           </div>
           <div className="flex flex-col gap-2 my-4">
@@ -78,7 +82,9 @@ const Login = () => {
                 errors.password && "text-red-500 text-sm"
               }`}
             >
-              {errors.password ? errors.password.message : "رمز عبور"}
+              {errors.password
+                ? errors.password.message
+                : t("login.formlabel.password")}
             </label>
             <input
               className={`py-3 px-2 rounded-xl mb-3 focus:ring-2 focus:ring-blue-700 focus:outline-none text-black  ${
@@ -86,7 +92,7 @@ const Login = () => {
               }`}
               {...register("password", formControler.password)}
               type="password"
-              placeholder="رمز عبور خود را وارد کنید"
+              placeholder={t("login.formplaceholders.password")}
             />
           </div>
           <button
@@ -95,7 +101,7 @@ const Login = () => {
               !isValid && "bg-blue-900 text-slate-500 pointer-events-none"
             }`}
           >
-            {isSubmitting ? "لطفا صبر کنید ..." : "ورود"}
+            {isSubmitting ? t("login.proccess") : t("login.button")}
           </button>
         </form>
       </div>
