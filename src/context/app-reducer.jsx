@@ -6,6 +6,12 @@ const appReducer = (state, action) => {
         language: action.payload,
       };
     }
+    case "TOGGLE_SIDEBAR": {
+      return {
+        ...state,
+        showSidebar: !state.showSidebar,
+      };
+    }
   }
 };
 
