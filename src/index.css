@@ -40,3 +40,7 @@
 body {
   @apply bg-gray-900 text-white font-sans;
 }
+
+.active {
+  @apply text-blue-400 font-bold;
+}
