@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import Sidebar from "./sidebar";
 import Header from "./header";
@@ -12,11 +12,10 @@ const MainLayout = () => {
       navigate("/login");
     }
   }, [token]);
-  const [toggle, setToggle] = useState(false);
   return (
-    <div className="flex">
+    <div className="flex w-full h-screen relative">
       <Sidebar />
-      <div className="w-full z-10 flex flex-col justify-between">
+      <div className="w-full z-10 flex flex-col">
         <Header />
         <main className="flex gap-4 flex-col h-full my-8 mx-4">
           <Outlet />
