@@ -6,6 +6,10 @@ import { loginActionForm } from "./actions/loginActionForm";
 import { registerActionForm } from "./actions/registerActionForm";
 import MainLayout from "./layout/main-layout/main-layout";
 import Courses from "./pages/courses";
+import { CourseLoader } from "./features/courses/data-loader/course-loader";
+import CourseCategories from "./pages/course-categories";
+import CourseDetails from "./features/courses/component/course-details";
+import { loadCourseDetails } from "./features/courses/data-loader/course-details-loader";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +19,16 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Courses />,
+        loader: CourseLoader,
+      },
+      {
+        path: "course-categories",
+        element: <CourseCategories />,
+      },
+      {
+        path: "courses/:id",
+        element: <CourseDetails />,
+        loader: loadCourseDetails,
       },
     ],
   },
