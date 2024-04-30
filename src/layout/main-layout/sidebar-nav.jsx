@@ -23,7 +23,10 @@ const SidebarNav = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to=" " className="flex items-center justify-start gap-2">
+              <NavLink
+                to="/course-categories"
+                className="flex items-center justify-start gap-2"
+              >
                 <span>
                   <CiVideoOn className="w-4 h-4 font-bold" />
                 </span>
