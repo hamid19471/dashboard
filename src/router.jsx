@@ -6,10 +6,11 @@ import { loginActionForm } from "./actions/loginActionForm";
 import { registerActionForm } from "./actions/registerActionForm";
 import MainLayout from "./layout/main-layout/main-layout";
 import Courses from "./pages/courses";
-import { CourseLoader } from "./features/courses/data-loader/course-loader";
 import CourseCategories from "./pages/course-categories";
 import CourseDetails from "./features/courses/component/course-details";
-import { loadCourseDetails } from "./features/courses/data-loader/course-details-loader";
+import { loadCategories } from "./features/data-loader/categories-loader";
+import { loadCourseDetails } from "./features/data-loader/course-details-loader";
+import { CourseLoader } from "./features/data-loader/course-loader";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       {
         path: "course-categories",
         element: <CourseCategories />,
+        loader: loadCategories,
       },
       {
         path: "courses/:id",
