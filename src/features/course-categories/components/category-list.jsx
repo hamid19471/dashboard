@@ -4,7 +4,7 @@ import Pagination from "../../../components/pagination";
 import { useNavigation } from "react-router-dom";
 import Loading from "../../../components/loading-spinner";
 
-const CategoryList = ({ categories: { totalRecords, data } }) => {
+const CategoryList = ({ categories: { totalRecords, data }, setOpenModal }) => {
   const navigation = useNavigation();
   return (
     <div className="mt-8 w-full relative">
@@ -28,7 +28,7 @@ const CategoryList = ({ categories: { totalRecords, data } }) => {
             >
               <td className="px-4 py-2">{category.name}</td>
               <td className="px-4 py-2 flex items-center justify-center gap-3">
-                <button>
+                <button onClick={() => setOpenModal(true)}>
                   <TfiTrash className="w-5 h-5 text-red-500" />
                 </button>
                 <button>
