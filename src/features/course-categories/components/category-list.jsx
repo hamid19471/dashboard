@@ -3,9 +3,14 @@ import { TfiPencil } from "react-icons/tfi";
 import Pagination from "../../../components/pagination";
 import { useNavigation } from "react-router-dom";
 import Loading from "../../../components/loading-spinner";
+import { useCategoryContext } from "../../../context/category-context";
 
-const CategoryList = ({ categories: { totalRecords, data }, setOpenModal }) => {
+const CategoryList = ({
+  categories: { totalRecords, data },
+  handleDeleteCategory,
+}) => {
   const navigation = useNavigation();
+  const { setCategory } = useCategoryContext();
   return (
     <div className="mt-8 w-full relative">
       {navigation.state !== "idle" && (
@@ -28,10 +33,10 @@ const CategoryList = ({ categories: { totalRecords, data }, setOpenModal }) => {
             >
               <td className="px-4 py-2">{category.name}</td>
               <td className="px-4 py-2 flex items-center justify-center gap-3">
-                <button onClick={() => setOpenModal(true)}>
+                <button onClick={() => handleDeleteCategory(category.id)}>
                   <TfiTrash className="w-5 h-5 text-red-500" />
                 </button>
-                <button>
+                <button onClick={() => setCategory(category)}>
                   <TfiPencil className="w-5 h-5 text-white" />
                 </button>
               </td>
