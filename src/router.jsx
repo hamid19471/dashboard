@@ -11,6 +11,7 @@ import CourseDetails from "./features/courses/component/course-details";
 import { loadCategories } from "./features/data-loader/categories-loader";
 import { loadCourseDetails } from "./features/data-loader/course-details-loader";
 import { CourseLoader } from "./features/data-loader/course-loader";
+import { CategoryProvider } from "./context/category-context";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "course-categories",
-        element: <CourseCategories />,
+        element: (
+          <CategoryProvider>
+            <CourseCategories />
+          </CategoryProvider>
+        ),
         loader: loadCategories,
       },
       {
